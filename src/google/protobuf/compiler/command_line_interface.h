@@ -26,6 +26,7 @@
 #include "absl/container/flat_hash_map.h"
 #include "absl/container/flat_hash_set.h"
 #include "absl/strings/string_view.h"
+#include "google/protobuf/compiler/allowlists/allowlists.h"
 #include "google/protobuf/descriptor.pb.h"
 #include "google/protobuf/port.h"
 
@@ -56,6 +57,8 @@ struct TransitiveDependencyOptions {
   bool include_source_code_info = false;
   bool retain_options = false;
 };
+
+int ProtocConfigDisabledMain(int argc, char* argv[]);
 
 // This class implements the command-line interface to the protocol compiler.
 // It is designed to make it very easy to create a custom protocol compiler
